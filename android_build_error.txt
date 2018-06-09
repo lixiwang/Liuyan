@@ -1,0 +1,20 @@
+解决Android studio遇见Could not find common.jar (android.arch.core:common:1.0.0).错误
+2018年05月28日 21:41:01
+阅读数：2577
+不知道怎么回事就发生的错误，翻墙找到的解决方法，如下：
+Error:Could not find common.jar (android.arch.core:common:1.0.0).
+Searched in the following locations:
+    https://jcenter.bintray.com/android/arch/core/common/1.0.0/common-1.0.0.jar
+
+修改的位置：Gradle Scripts --->build.gradle(Project:项目名)--->allprojects｛｝里面；
+解决方法：
+    repositories {
+        maven{url"https://maven.google.com"}
+        jcenter()
+        maven{url 'https://jitpack.io'}
+    }
+
+--------分界线------------------------
+切记要联网
+然后try
+问题完美解决
